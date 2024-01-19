@@ -1,11 +1,943 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HienLuongAudio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/output.css">
 </head>
-<body>
+<body class="">
     
+    
+    <header class="bg-gradient-to-b from-orange-900 via-orange-600 to-orange-300">
+        <!-- header bản mobile-->
+        <section class="px-4 py-2 lg:hidden">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center gap-1 text-xs text-white font-semibold uppercase tracking-widest">
+                        <img src="assets/imgs/logo.png" alt="website logo image" class="w-8 h-8 italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;">
+                        <span class="">HienLuongAudio</span>
+                    </a>
+                </div>
+                <button id="mobile-menu-button" class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6 fill-white">
+                        <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="pt-2">
+                <form action="" class="relative overflow-hidden rounded-lg grow">
+                    <input type="text" placeholder="Nhập từ khóa tìm kiếm ..." class="w-full pl-4 pr-12 py-3 text-xs text-orange-500 italic placeholder:text-xs placeholder:text-orange-400 placeholder:font-light focus:outline-orange-500 focus:ring-orange-500 focus:border-orange-500">
+                    <button class="absolute top-0 right-0 h-full px-4 text-white bg-orange-500 hover:bg-orange-600 focus:bg-orange-600"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+            <div class="pt-2">
+                <div class="w-full flex flex-row gap-4 overflow-auto snap-x select-none no-scrollbar">
+                    <a 
+                        href="#" 
+                        class="py-1 text-white text-sm focus:text-orange-500 min-w-max snap-start snap-always">
+                        Karaoke
+                    </a>
+                    <a 
+                        href="#" 
+                        class="py-1 text-white text-sm focus:text-orange-500 min-w-max snap-start snap-always">
+                        Build Karaoke
+                    </a>
+                    <a 
+                        href="#" 
+                        class="py-1 text-white text-sm focus:text-orange-500 min-w-max snap-start snap-always">
+                        Best Speaker
+                    </a>
+                    <a 
+                        href="#" 
+                        class="py-1 text-white text-sm focus:text-orange-500 min-w-max snap-start snap-always">
+                        Best choice microphone
+                    </a>
+                    <a 
+                        href="#" 
+                        class="py-1 text-white text-sm focus:text-orange-500 min-w-max snap-start snap-always">
+                        Deal hot
+                    </a>
+                </div>
+            </div>
+            <!-- slide trình chiếu -->
+            <div id="default-carousel" class="pt-2 relative w-full" data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative h-40 sm:h-56 md:h-96 overflow-hidden">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/assets/imgs/carousels/slide1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/assets/imgs/carousels/slide2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="/assets/imgs/carousels/slide3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                </div>
+                
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
+        </section>
+        <!-- header bản laptop-pc -->
+        <section class="hidden lg:block md:px-8 lg:px-12 pt-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center gap-1 text-xl lg:text-2xl text-white font-semibold uppercase tracking-widest">
+                        <img src="assets/imgs/logo.png" alt="website logo image" class="w-12 h-12 italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;">
+                        <span class="">HienLuongAudio</span>
+                    </a>
+                </div>
+                <ul class="flex items-center gap-4 lg:gap-8">
+                    <!-- <li><a href="#" class="md:text-sm lg:text-base text-white font-medium transition duration-300 hover:text-orange-300">Trang chủ</a></li> -->
+                    <li><a href="#" class="md:text-sm lg:text-base text-white font-medium transition duration-300 hover:text-orange-300">Giới thiệu</a></li>
+                    <li><a href="#" class="md:text-sm lg:text-base text-white font-medium transition duration-300 hover:text-orange-300">Tin tức</a></li>
+                    <li><a href="#" class="md:text-sm lg:text-base text-white font-medium transition duration-300 hover:text-orange-300">Dự án</a></li>
+                    <li><a href="#" class="md:text-sm lg:text-base text-white font-medium transition duration-300 hover:text-orange-300">Liên hệ</a></li>
+                    <li><a href="#" class="md:text-sm lg:text-base text-white font-medium transition duration-300 hover:text-orange-300">Hỗ trợ</a></li>
+                </ul>
+                <div class="flex items-center justify-end gap-2">
+                    <button id="form-search-btn" data-tooltip-target="tooltip-search" data-tooltip-placement="bottom"
+                    class="inline-block relative">
+                        <svg class="w-6 h-6 fill-white" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+                        </svg>
+                        <div id="tooltip-search" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-xs font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip">
+                            Tìm kiếm
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                    </button>
+                    <a href="#" data-tooltip-target="tooltip-account" data-tooltip-placement="bottom"
+                    class="inline-block relative">
+                        <svg class="w-6 h-6 fill-white" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"></path>
+                        </svg>
+                        <div id="tooltip-account" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-xs font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip">
+                            Tài khoản
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                    </a>
+                    <a href="#" data-tooltip-target="tooltip-cart" data-tooltip-placement="bottom"
+                    class="inline-block relative">
+                        <span class="text-white text-[10px] font-medium absolute -right-4 -top-3 px-[4px] bg-orange-600">99+</span>
+                        <svg class="w-6 h-6 fill-white" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z"></path>
+                        </svg>
+                        <div id="tooltip-cart" role="tooltip" class="absolute z-50 invisible inline-block px-3 py-2 text-xs font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip">
+                            Giỏ hàng
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="form-search" class="pt-2 hidden">
+                <form action="" class="relative overflow-hidden rounded-lg grow">
+                    <input type="text" placeholder="Nhập từ khóa bạn muốn tìm kiếm ..." class="w-full pl-4 pr-12 py-3 text-sm italic focus:outline-orange-400 focus:ring-orange-400 focus:border-orange-400">
+                    <button class="absolute top-0 right-0 h-full px-4 text-white bg-orange-500 hover:bg-orange-600 focus:bg-orange-600"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+            <div class="pt-2 mt-4 border-t border-orange-500 flex items-center gap-2">
+                <h3 class="w-1/3 xl:w-1/4 font-medium text-base text-white py-1"><i class="fa-solid fa-bars"></i> Danh mục sản phẩm</h3>
+                <div class="w-2/3 xl:w-3/4 flex flex-row gap-4 overflow-auto snap-x select-none no-scrollbar">
+                    <a 
+                        href="#" 
+                        class="py-1 text-white text-sm focus:text-orange-500 min-w-max snap-start snap-always">
+                        Karaoke
+                    </a>
+                    <a 
+                        href="#" 
+                        class="py-1 text-white text-sm focus:text-orange-500 min-w-max snap-start snap-always">
+                        Build Karaoke
+                    </a>
+                    <a 
+                        href="#" 
+                        class="py-1 text-white text-sm focus:text-orange-500 min-w-max snap-start snap-always">
+                        Best Speaker
+                    </a>
+                    <a 
+                        href="#" 
+                        class="py-1 text-white text-sm focus:text-orange-500 min-w-max snap-start snap-always">
+                        Best choice microphone
+                    </a>
+                    <a 
+                        href="#" 
+                        class="py-1 text-white text-sm focus:text-orange-500 min-w-max snap-start snap-always">
+                        Deal hot
+                    </a>
+                </div>
+            </div>
+            <div class="pt-2 flex">
+                <!-- danh mục sản phẩm -->
+                <div class="w-1/3 xl:w-1/4">
+                    <ul class="relative">
+                        <li class="group/lv2">
+                            <a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-400 group-hover/lv2:text-orange-400">
+                                Amplifier
+                                <span class="float-right"><i class="fa-solid fa-angle-right"></i></span>
+                            </a>
+                            <ul class="absolute z-50 top-0 -right-full w-full h-full bg-gradient-to-br from-orange-700 via-orange-500 to-orange-300 transition-all duration-700 hidden group-hover/lv2:block">
+                                <li>
+                                    <a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-400 ">
+                                        Nexo Amplifier 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-400 ">
+                                        DMX Amplifier 
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="group/lv2">
+                            <a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-400 group-hover/lv2:text-orange-400">
+                                Loa
+                                <span class="float-right"><i class="fa-solid fa-angle-right"></i></span>
+                            </a>
+                            <ul class="absolute z-50 top-0 -right-full w-full h-full bg-gradient-to-br from-orange-700 via-orange-500 to-orange-300 transition-all duration-700 hidden group-hover/lv2:block">
+                                <li class="group/lv3">
+                                    <a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-400 group-hover/lv3:text-orange-400">
+                                        Loa Subwoofer
+                                        <span class="float-right"><i class="fa-solid fa-angle-right"></i></span>
+                                    </a>
+                                    <ul class="absolute z-50 top-0 -right-full w-full h-full bg-gradient-to-br from-orange-700 via-orange-500 to-orange-300 transition-all duration-700 hidden group-hover/lv3:block">
+                                        <li>
+                                            <a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-400 ">
+                                                Subwoofer Nexo
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-400 ">
+                                                Subwoofer DMX
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-400 ">
+                                        Loa Soundbar
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-400">Vang số</a></li>
+                        <li><a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-300">Mixer</a></li>
+                        <li><a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-300">DSP</a></li>
+                        <li><a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-300">Micro</a></li>
+                        <li><a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-200">Quản lý nguồn điện</a></li>
+                        <li><a href="#" class="block text-white font-light border-t border-orange-400 px-4 py-2 transition duration-300 hover:text-orange-200">Các thương hiệu âm thanh hay</a></li>
+                    </ul>
+                </div>
+                <!-- từ khóa + slides -->
+                <div class="w-2/3 xl:w-3/4">
+                    <!-- slide trình chiếu -->
+                    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+                        <!-- Carousel wrapper -->
+                        <div class="relative h-96 overflow-hidden">
+                            <!-- Item 1 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="/assets/imgs/carousels/slide1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="/assets/imgs/carousels/slide2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                                <img src="/assets/imgs/carousels/slide3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            </div>
+                        </div>
+                        
+                        <!-- Slider controls -->
+                        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                                </svg>
+                                <span class="sr-only">Previous</span>
+                            </span>
+                        </button>
+                        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                                </svg>
+                                <span class="sr-only">Next</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <section class="px-4 md:px-8 lg:px-12 pt-20 bg-gradient-to-b from-orange-300 via-orange-150 to-gray-100">
+        <div class="w-full flex flex-row md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-col-4 gap-4 overflow-auto snap-x select-none no-scrollbar">
+            <div class="min-w-40 w-80 md:w-full bg-white rounded-lg shadow overflow-hidden snap-start snap-always">
+                <a href="#" class="block p-2 md:p-4">
+                    <h5 class="text-sm font-semibold">Best speaker for you !</h5>
+                </a>
+                <a href="#" class="overflow-hidden">
+                    <img src="/assets/imgs/speaker1.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Best speaker for you !" />
+                </a>
+            </div>
+            <div class="min-w-40 w-80 md:w-full bg-white rounded-lg shadow overflow-hidden snap-start snap-always">
+                <a href="#" class="block p-2 md:p-4">
+                    <h5 class="text-sm font-semibold">Pro Microphone in 2024</h5>
+                </a>
+                <a href="#" class="overflow-hidden">
+                    <img src="/assets/imgs/micophone.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Pro Microphone in 2024" />
+                </a>
+            </div>
+            <div class="min-w-40 w-80 md:w-full bg-white rounded-lg shadow overflow-hidden snap-start snap-always">
+                <a href="#" class="block p-2 md:p-4">
+                    <h5 class="text-sm font-semibold">Mixer in the year 2023!</h5>
+                </a>
+                <a href="#" class="overflow-hidden">
+                    <img src="/assets/imgs/mixer.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                </a>
+            </div>
+            <div class="min-w-40 w-80 md:w-full bg-white rounded-lg shadow overflow-hidden snap-start snap-always">
+                <a href="#" class="block p-2 md:p-4">
+                    <h5 class="text-sm font-semibold">New product in 2024</h5>
+                </a>
+                <a href="#" class="overflow-hidden">
+                    <img src="/assets/imgs/speaker2.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="px-4 md:px-8 lg:px-12 pt-20 bg-gray-100">
+        <div class="pb-2 flex flex-col gap-1 md:block">
+            <h3 class="inline-block text-xl font-semibold pr-2">Sản phẩm nổi bật</h3>
+            <a href="#" class="inline-block text-xs text-orange-500 hover:underline hover:text-orange-600 transition duration-300">Xem tất cả</a>
+        </div>
+        <div class="rounded">
+            <div class="flex flex-row gap-4 snap-x overflow-auto pb-4">
+                <div class="snap-start min-w-60 w-80 relative mb-2 transition-all duration-700 group md:hover:bg-white md:hover:shadow md:hover:rounded-lg md:hover:p-4">
+                    <button onclick="alert('đã cho sản phẩm vào giỏ hàng !');" class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full shadow z-20 bg-orange-400 text-white font-semibold hover:bg-orange-500"><i class="fa-solid fa-plus"></i></button>
+                    <div class="overflow-hidden rounded-md bg-orange-400">
+                        <img src="/assets/imgs/spnb/cuc-day-cong-suat-4-kenh-lea-professional-cs704-1.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                    </div>
+                    <!-- <span class="inline-block text-xs text-white rounded-sm shadow-sm bg-orange-500 px-2 py-1 mt-2">Giảm giá 50%</span> -->
+                    <div class="flex items-baseline gap-1 flex-wrap mt-2">
+                        <span class="text-base font-semibold uppercase">115.000.000 vnd</span>
+                        <!-- <span class="text-xs uppercase line-through text-gray-300">200.000.000 vnd</span> -->
+                    </div>
+                    <h4 class="text-sm line-clamp-1 mt-1 transition duration-700 md:group-hover:text-orange-500">Amplifier LEA Professional CS704</h4>
+                    <a href="#" class="absolute inset-0 z-10 bg-transparent"></a>
+                </div>
+                <div class="snap-start min-w-60 w-80 relative mb-2 transition-all duration-700 group md:hover:bg-white md:hover:shadow md:hover:rounded-lg md:hover:p-4">
+                    <button onclick="alert('đã cho sản phẩm vào giỏ hàng !');" class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full shadow z-20 bg-orange-400 text-white font-semibold hover:bg-orange-500"><i class="fa-solid fa-plus"></i></button>
+                    <div class="overflow-hidden rounded-md bg-orange-400">
+                        <img src="/assets/imgs/spnb/nexo_p12.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                    </div>
+                    <!-- <span class="inline-block text-xs text-white rounded-sm shadow-sm bg-orange-500 px-2 py-1 mt-2">Giảm giá 10%</span> -->
+                    <div class="flex items-baseline gap-1 flex-wrap mt-2">
+                        <span class="text-base font-semibold uppercase">90.000.000 vnd</span>
+                        <!-- <span class="text-xs uppercase line-through text-gray-300">100.000.000 vnd</span> -->
+                    </div>
+                    <h4 class="text-sm line-clamp-2 mt-1 transition duration-700 md:group-hover:text-orange-500">Loa Nexo P12 Pháp</h4>
+                    <a href="#" class="absolute inset-0 z-10 bg-transparent"></a>
+                </div>
+                <div class="snap-start min-w-60 w-80 relative mb-2 transition-all duration-700 group md:hover:bg-white md:hover:shadow md:hover:rounded-lg md:hover:p-4">
+                    <button onclick="alert('đã cho sản phẩm vào giỏ hàng !');" class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full shadow z-20 bg-orange-400 text-white font-semibold hover:bg-orange-500"><i class="fa-solid fa-plus"></i></button>
+                    <div class="overflow-hidden rounded-md bg-orange-400">
+                        <img src="/assets/imgs/spnb/id84l.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                    </div>
+                    <!-- <span class="inline-block text-xs text-white rounded-sm shadow-sm bg-orange-500 px-2 py-1 mt-2">Giảm giá 10%</span> -->
+                    <div class="flex items-baseline gap-1 flex-wrap mt-2">
+                        <span class="text-base font-semibold uppercase">97.000.000 vnd</span>
+                        <!-- <span class="text-xs uppercase line-through text-gray-300">100.000.000 vnd</span> -->
+                    </div>
+                    <h4 class="text-sm line-clamp-1 mt-1 transition duration-700 md:group-hover:text-orange-500">Loa Nexo ID84T</h4>
+                    <a href="#" class="absolute inset-0 z-10 bg-transparent"></a>
+                </div>
+                <div class="snap-start min-w-60 w-80 relative mb-2 transition-all duration-700 group md:hover:bg-white md:hover:shadow md:hover:rounded-lg md:hover:p-4">
+                    <button onclick="alert('đã cho sản phẩm vào giỏ hàng !');" class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full shadow z-20 bg-orange-400 text-white font-semibold hover:bg-orange-500"><i class="fa-solid fa-plus"></i></button>
+                    <div class="overflow-hidden rounded-md bg-orange-400">
+                        <img src="/assets/imgs/spnb/loa-hk-linear-5-112f.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                    </div>
+                    <!-- <span class="inline-block text-xs text-white rounded-sm shadow-sm bg-orange-500 px-2 py-1 mt-2">Giảm giá 10%</span> -->
+                    <div class="flex items-baseline gap-1 flex-wrap mt-2">
+                        <span class="text-base font-semibold uppercase">78.000.000 vnd</span>
+                        <!-- <span class="text-xs uppercase line-through text-gray-300">100.000.000 vnd</span> -->
+                    </div>
+                    <h4 class="text-sm line-clamp-2 mt-1 transition duration-700 md:group-hover:text-orange-500">Loa HK Linear 5 112F</h4>
+                    <a href="#" class="absolute inset-0 z-10 bg-transparent"></a>
+                </div>
+                <div class="snap-start min-w-60 w-80 relative mb-2 transition-all duration-700 group md:hover:bg-white md:hover:shadow md:hover:rounded-lg md:hover:p-4">
+                    <button onclick="alert('đã cho sản phẩm vào giỏ hàng !');" class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full shadow z-20 bg-orange-400 text-white font-semibold hover:bg-orange-500"><i class="fa-solid fa-plus"></i></button>
+                    <div class="overflow-hidden rounded-md bg-orange-400">
+                        <img src="/assets/imgs/spnb/x12_s.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                    </div>
+                    <!-- <span class="inline-block text-xs text-white rounded-sm shadow-sm bg-orange-500 px-2 py-1 mt-2">Giảm giá 10%</span> -->
+                    <div class="flex items-baseline gap-1 flex-wrap mt-2">
+                        <span class="text-base font-semibold uppercase">78.000.000 vnd</span>
+                        <!-- <span class="text-xs uppercase line-through text-gray-300">100.000.000 vnd</span> -->
+                    </div>
+                    <h4 class="text-sm line-clamp-1 mt-1 transition duration-700 md:group-hover:text-orange-500">Loa Karaoke Martin Blackline X12</h4>
+                    <a href="#" class="absolute inset-0 z-10 bg-transparent"></a>
+                </div>
+                <div class="snap-start min-w-60 w-80 relative mb-2 transition-all duration-700 group md:hover:bg-white md:hover:shadow md:hover:rounded-lg md:hover:p-4">
+                    <button onclick="alert('đã cho sản phẩm vào giỏ hàng !');" class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full shadow z-20 bg-orange-400 text-white font-semibold hover:bg-orange-500"><i class="fa-solid fa-plus"></i></button>
+                    <div class="overflow-hidden rounded-md bg-orange-400">
+                        <img src="/assets/imgs/spnb/nexo_p10.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                    </div>
+                    <!-- <span class="inline-block text-xs text-white rounded-sm shadow-sm bg-orange-500 px-2 py-1 mt-2">Giảm giá 10%</span> -->
+                    <div class="flex items-baseline gap-1 flex-wrap mt-2">
+                        <span class="text-base font-semibold uppercase">79.600.000 vnd</span>
+                        <!-- <span class="text-xs uppercase line-through text-gray-300">100.000.000 vnd</span> -->
+                    </div>
+                    <h4 class="text-sm line-clamp-1 mt-1 transition duration-700 md:group-hover:text-orange-500">Loa Nexo P10 France</h4>
+                    <a href="#" class="absolute inset-0 z-10 bg-transparent"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dàn Karaoke -->
+    <section class="px-4 md:px-8 lg:px-12 pt-20 bg-gray-100">
+        <div class="pb-2 flex flex-col gap-1 md:block">
+            <h3 class="inline-block text-xl font-semibold pr-2">Dàn loa Karaoke 2024</h3>
+            <a href="#" class="inline-block text-xs text-orange-500 hover:underline hover:text-orange-600 transition duration-300">Xem tất cả</a>
+        </div>
+        <div class="rounded">
+            <div class="flex flex-row gap-4 snap-x overflow-auto pb-4">
+                <div class="snap-start min-w-60 w-80 relative mb-2 transition-all duration-700 group md:hover:bg-white md:hover:shadow md:hover:rounded-lg md:hover:p-4">
+                    <button onclick="alert('đã cho sản phẩm vào giỏ hàng !');" class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full shadow z-20 bg-orange-400 text-white font-semibold hover:bg-orange-500"><i class="fa-solid fa-plus"></i></button>
+                    <div class="overflow-hidden rounded-md bg-gray-200 flex items-center justify-center">
+                        <img src="/assets/imgs/dan-loa-karaoke-hk-kp12-2.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                    </div>
+                    <span class="inline-block text-xs text-white rounded-sm shadow-sm bg-orange-500 px-2 py-1 mt-2">Giảm giá 15%</span>
+                    <div class="flex items-baseline gap-1 flex-wrap mt-2">
+                        <span class="text-base font-semibold uppercase">175.000.000 vnd</span>
+                        <span class="text-xs uppercase line-through text-gray-300">206.000.000 vnd</span>
+                    </div>
+                    <h4 class="text-sm line-clamp-1 mt-1 transition duration-700 md:group-hover:text-orange-500">Dàn loa Karaoke HK KP122</h4>
+                    <a href="#" class="absolute inset-0 z-10 bg-transparent"></a>
+                </div>
+                <div class="snap-start min-w-60 w-80 relative mb-2 transition-all duration-700 group md:hover:bg-white md:hover:shadow md:hover:rounded-lg md:hover:p-4">
+                    <button onclick="alert('đã cho sản phẩm vào giỏ hàng !');" class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full shadow z-20 bg-orange-400 text-white font-semibold hover:bg-orange-500"><i class="fa-solid fa-plus"></i></button>
+                    <div class="overflow-hidden rounded-md bg-gray-200 flex items-center justify-center">
+                        <img src="/assets/imgs/dan-loa-karaoke-hk-linear5-112f.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                    </div>
+                    <span class="inline-block text-xs text-white rounded-sm shadow-sm bg-orange-500 px-2 py-1 mt-2">Giảm giá 20%</span>
+                    <div class="flex items-baseline gap-1 flex-wrap mt-2">
+                        <span class="text-base font-semibold uppercase">272.000.000 vnd</span>
+                        <span class="text-xs uppercase line-through text-gray-300">340.000.000 vnd</span>
+                    </div>
+                    <h4 class="text-sm line-clamp-1 mt-1 transition duration-700 md:group-hover:text-orange-500">Dàn loa Karaoke HK Linear 5 112F</h4>
+                    <a href="#" class="absolute inset-0 z-10 bg-transparent"></a>
+                </div>
+                <div class="snap-start min-w-60 w-80 relative mb-2 transition-all duration-700 group md:hover:bg-white md:hover:shadow md:hover:rounded-lg md:hover:p-4">
+                    <button onclick="alert('đã cho sản phẩm vào giỏ hàng !');" class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full shadow z-20 bg-orange-400 text-white font-semibold hover:bg-orange-500"><i class="fa-solid fa-plus"></i></button>
+                    <div class="overflow-hidden rounded-md bg-gray-200 flex items-center justify-center">
+                        <img src="/assets/imgs/dan-loa-karaoke-nexo-p12.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                    </div>
+                    <!-- <span class="inline-block text-xs text-white rounded-sm shadow-sm bg-orange-500 px-2 py-1 mt-2">Giảm giá 20%</span> -->
+                    <div class="flex items-baseline gap-1 flex-wrap mt-2">
+                        <span class="text-base font-semibold uppercase">555.000.000 vnd</span>
+                        <!-- <span class="text-xs uppercase line-through text-gray-300">340.000.000 vnd</span> -->
+                    </div>
+                    <h4 class="text-sm line-clamp-1 mt-1 transition duration-700 md:group-hover:text-orange-500">Dàn loa Karaoke Nexo P12</h4>
+                    <a href="#" class="absolute inset-0 z-10 bg-transparent"></a>
+                </div>
+                <div class="snap-start min-w-60 w-80 relative mb-2 transition-all duration-700 group md:hover:bg-white md:hover:shadow md:hover:rounded-lg md:hover:p-4">
+                    <button onclick="alert('đã cho sản phẩm vào giỏ hàng !');" class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full shadow z-20 bg-orange-400 text-white font-semibold hover:bg-orange-500"><i class="fa-solid fa-plus"></i></button>
+                    <div class="overflow-hidden rounded-md bg-gray-200 flex items-center justify-center">
+                        <img src="/assets/imgs/dan_loa_karaoke_nexo_id84.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                    </div>
+                    <span class="inline-block text-xs text-white rounded-sm shadow-sm bg-orange-500 px-2 py-1 mt-2">Giảm giá 5%</span>
+                    <div class="flex items-baseline gap-1 flex-wrap mt-2">
+                        <span class="text-base font-semibold uppercase">625.668.000 vnd</span>
+                        <span class="text-xs uppercase line-through text-gray-300">658.620.000 vnd</span>
+                    </div>
+                    <h4 class="text-sm line-clamp-2 mt-1 transition duration-700 md:group-hover:text-orange-500">Dàn loa Karaoke Nexo ID84</h4>
+                    <a href="#" class="absolute inset-0 z-10 bg-transparent"></a>
+                </div>
+                <div class="snap-start min-w-60 w-80 relative mb-2 transition-all duration-700 group md:hover:bg-white md:hover:shadow md:hover:rounded-lg md:hover:p-4">
+                    <button onclick="alert('đã cho sản phẩm vào giỏ hàng !');" class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full shadow z-20 bg-orange-400 text-white font-semibold hover:bg-orange-500"><i class="fa-solid fa-plus"></i></button>
+                    <div class="overflow-hidden rounded-md bg-gray-200 flex items-center justify-center">
+                        <img src="/assets/imgs/dan-karaoke-nova-mf12.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                    </div>
+                    <span class="inline-block text-xs text-white rounded-sm shadow-sm bg-orange-500 px-2 py-1 mt-2">Giảm giá 10%</span>
+                    <div class="flex items-baseline gap-1 flex-wrap mt-2">
+                        <span class="text-base font-semibold uppercase">125.500.000 vnd</span>
+                        <span class="text-xs uppercase line-through text-gray-300">140.000.000 vnd</span>
+                    </div>
+                    <h4 class="text-sm line-clamp-1 mt-1 transition duration-700 md:group-hover:text-orange-500">Dàn loa Karaoke Nova MF12</h4>
+                    <a href="#" class="absolute inset-0 z-10 bg-transparent"></a>
+                </div>
+                <div class="snap-start min-w-60 w-80 relative mb-2 transition-all duration-700 group md:hover:bg-white md:hover:shadow md:hover:rounded-lg md:hover:p-4">
+                    <button onclick="alert('đã cho sản phẩm vào giỏ hàng !');" class="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full shadow z-20 bg-orange-400 text-white font-semibold hover:bg-orange-500"><i class="fa-solid fa-plus"></i></button>
+                    <div class="overflow-hidden rounded-md bg-gray-200 flex items-center justify-center">
+                        <img src="/assets/imgs/dan-karaoke-dmx-es12-plus.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="Mixer in the year 2023!" />
+                    </div>
+                    <!-- <span class="inline-block text-xs text-white rounded-sm shadow-sm bg-orange-500 px-2 py-1 mt-2">Giảm giá 10%</span> -->
+                    <div class="flex items-baseline gap-1 flex-wrap mt-2">
+                        <span class="text-base font-semibold uppercase">85.000.000 vnd</span>
+                        <!-- <span class="text-xs uppercase line-through text-gray-300">140.000.000 vnd</span> -->
+                    </div>
+                    <h4 class="text-sm line-clamp-1 mt-1 transition duration-700 md:group-hover:text-orange-500">Dàn loa Karaoke DMX ES12+</h4>
+                    <a href="#" class="absolute inset-0 z-10 bg-transparent"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Các thương hiệu âm thanh -->
+    <section class="px-4 md:px-8 lg:px-12 pt-20 bg-gray-100">
+        <div class="pb-2 flex flex-col gap-1 md:block">
+            <h3 class="inline-block text-xl font-semibold pr-2">Các thương hiệu âm thanh nổi tiếng</h3>
+        </div>
+        <div class="rounded relative transition-all duration-700 group">
+            <div class="absolute left-0 top-0 bottom-0 z-50 transition-all duration-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+                <button id="brand-btn-prev" class="text-white text-2xl px-3 py-1 rounded-full bg-gray-900/60"><i class="fa-solid fa-chevron-left"></i></button>
+            </div>
+            <div class="absolute right-0 top-0 bottom-0 z-50 transition-all duration-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+                <button id="brand-btn-next" class="text-white text-2xl px-3 py-1 rounded-full bg-gray-900/60"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div id="list-brand" class="flex flex-row items-center gap-16 transition-all duration-700 snap-x overflow-auto hidden-scrollbar group-hover:visible-scrollbar">
+                <div class="snap-start min-w-32 w-36 relative mb-4">
+                    <a href="hph.html" class="absolute inset-0 bg-transparent z-10"></a>
+                    <img src="/assets/imgs/brands/dmx1.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="dmx logo" />
+                </div>
+                <div class="snap-start min-w-32 w-36 relative mb-4">
+                    <a href="#" class="absolute inset-0 bg-transparent z-10"></a>
+                    <img src="/assets/imgs/brands/lspro.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="lspro logo" />
+                </div>
+                <div class="snap-start min-w-32 w-36 relative mb-4">
+                    <a href="#" class="absolute inset-0 bg-transparent z-10"></a>
+                    <img src="/assets/imgs/brands/powersoft.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="powersoft logo" />
+                </div>
+                <div class="snap-start min-w-32 w-36 relative mb-4">
+                    <a href="#" class="absolute inset-0 bg-transparent z-10"></a>
+                    <img src="/assets/imgs/brands/phoenix.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="phoenix logo" />
+                </div>
+                <div class="snap-start min-w-32 w-36 relative mb-4">
+                    <a href="#" class="absolute inset-0 bg-transparent z-10"></a>
+                    <img src="/assets/imgs/brands/nova.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="nova logo" />
+                </div>
+                <div class="snap-start min-w-32 w-36 relative mb-4">
+                    <a href="#" class="absolute inset-0 bg-transparent z-10"></a>
+                    <img src="/assets/imgs/brands/nexo.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="nexo logo" />
+                </div>
+                <div class="snap-start min-w-32 w-36 relative mb-4">
+                    <a href="#" class="absolute inset-0 bg-transparent z-10"></a>
+                    <img src="/assets/imgs/brands/magicktv.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="magicktv logo" />
+                </div>
+                <div class="snap-start min-w-32 w-36 relative mb-4">
+                    <a href="#" class="absolute inset-0 bg-transparent z-10"></a>
+                    <img src="/assets/imgs/brands/nst-audio.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="nst-audio logo" />
+                </div>
+                <div class="snap-start min-w-32 w-36 relative mb-4">
+                    <a href="#" class="absolute inset-0 bg-transparent z-10"></a>
+                    <img src="/assets/imgs/brands/allen-heath.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="allen-heath logo" />
+                </div>
+                <div class="snap-start min-w-32 w-36 relative mb-4">
+                    <a href="#" class="absolute inset-0 bg-transparent z-10"></a>
+                    <img src="/assets/imgs/brands/honeywell.png" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="honeywell logo" />
+                </div>
+                <div class="snap-start min-w-32 w-36 relative mb-4">
+                    <a href="#" class="absolute inset-0 bg-transparent z-10"></a>
+                    <img src="/assets/imgs/brands/lab-gruppen.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="lab-gruppen logo" />
+                </div>
+                <div class="snap-start min-w-32 w-36 relative mb-4">
+                    <a href="#" class="absolute inset-0 bg-transparent z-10"></a>
+                    <img src="/assets/imgs/brands/hk-audio.jpg" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="hk-audio logo" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dự án của chúng tôi -->
+    <section class="px-4 md:px-8 lg:px-12 pt-20 grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-100">
+        <section class="p-4 shadow rounded-lg bg-white">
+            <div class="pb-2 flex flex-col gap-1 md:block">
+                <h3 class="inline-block text-xl font-semibold pr-2">Dự án hoàn thành</h3>
+                <a href="#" class="inline-block text-xs text-orange-500 hover:underline hover:text-orange-600 transition duration-300">Xem tất cả</a>
+            </div>
+            <div class="">
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-col xs:flex-row items-start gap-2">   
+                        <a href="#" class="w-full h-auto xs:min-w-60 xs:min-h-32 xs:h-40 p-0 md:p-2 overflow-hidden flex items-center justify-center  shadow rounded-lg bg-white transitio-all duration-700 hover:p-0">
+                            <img src="assets/imgs/du-an-1.jpg" class="h-max italic bg-no-repeat bg-cover align-middle rounded-md" style="shape-margin: 0.75rem;"  alt="" />
+                        </a>
+                        <div class="flex flex-col gap-2">
+                            <a href="#" class="text-lg font-semibold line-clamp-2 transition duration-300 hover:text-orange-500">Lắp đặt dàn loa Karaoke tại Vinsmart City - Hà Nội</a>
+                            <p class="line-clamp-3 text-sm text-gray-600">Hiền Lương Audio tự hào là đơn vị phân phối các sản phẩm âm thanh karaoke cao cấp như Nexo, LEA Professional, Nova Acoustic, Martin Audio, Amate Audio, Adamson, D&b Audiotechnik, DMX Audio .... Với kinh nghiệm lâu năm trên thị trường chúng tôi đã thi công nhiều dự án Karaoke trải dài trên khắp các tỉnh thành.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col xs:flex-row items-start gap-2">   
+                        <a href="#" class="w-full h-auto xs:min-w-60 xs:min-h-32 xs:h-40 p-0 md:p-2 overflow-hidden flex items-center justify-center  shadow rounded-lg bg-white transitio-all duration-700 hover:p-0">
+                            <img src="assets/imgs/du-an-1.jpg" class="h-max italic bg-no-repeat bg-cover align-middle rounded-md" style="shape-margin: 0.75rem;"  alt="" />
+                        </a>
+                        <div class="flex flex-col gap-2">
+                            <a href="#" class="text-lg font-semibold line-clamp-2 transition duration-300 hover:text-orange-500">Lắp đặt dàn loa Karaoke tại Vinsmart City - Hà Nội</a>
+                            <p class="line-clamp-3 text-sm text-gray-600">Hiền Lương Audio tự hào là đơn vị phân phối các sản phẩm âm thanh karaoke cao cấp như Nexo, LEA Professional, Nova Acoustic, Martin Audio, Amate Audio, Adamson, D&b Audiotechnik, DMX Audio .... Với kinh nghiệm lâu năm trên thị trường chúng tôi đã thi công nhiều dự án Karaoke trải dài trên khắp các tỉnh thành.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col xs:flex-row items-start gap-2">   
+                        <a href="#" class="w-full h-auto xs:min-w-60 xs:min-h-32 xs:h-40 p-0 md:p-2 overflow-hidden flex items-center justify-center  shadow rounded-lg bg-white transitio-all duration-700 hover:p-0">
+                            <img src="assets/imgs/du-an-1.jpg" class="h-max italic bg-no-repeat bg-cover align-middle rounded-md" style="shape-margin: 0.75rem;"  alt="" />
+                        </a>
+                        <div class="flex flex-col gap-2">
+                            <a href="#" class="text-lg font-semibold line-clamp-2 transition duration-300 hover:text-orange-500">Lắp đặt dàn loa Karaoke tại Vinsmart City - Hà Nội</a>
+                            <p class="line-clamp-3 text-sm text-gray-600">Hiền Lương Audio tự hào là đơn vị phân phối các sản phẩm âm thanh karaoke cao cấp như Nexo, LEA Professional, Nova Acoustic, Martin Audio, Amate Audio, Adamson, D&b Audiotechnik, DMX Audio .... Với kinh nghiệm lâu năm trên thị trường chúng tôi đã thi công nhiều dự án Karaoke trải dài trên khắp các tỉnh thành.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Tin tức của chúng tôi -->
+        <section class="p-4 shadow rounded-lg bg-white">
+            <div class="pb-2 flex flex-col gap-1 md:block">
+                <h3 class="inline-block text-xl font-semibold pr-2">Tin tức</h3>
+                <a href="#" class="inline-block text-xs text-orange-500 hover:underline hover:text-orange-600 transition duration-300">Xem tất cả</a>
+            </div>
+            <div class="">
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-col xs:flex-row items-start gap-2">   
+                        <a href="#" class="w-full h-auto xs:min-w-60 xs:min-h-32 xs:h-40 p-0 md:p-2 overflow-hidden flex items-center justify-center  shadow rounded-lg bg-white transitio-all duration-700 hover:p-0">
+                            <img src="assets/imgs/du-an-1.jpg" class="h-max italic bg-no-repeat bg-cover align-middle rounded-md" style="shape-margin: 0.75rem;"  alt="" />
+                        </a>
+                        <div class="flex flex-col gap-2">
+                            <a href="#" class="text-lg font-semibold line-clamp-2 transition duration-300 hover:text-orange-500">Lắp đặt dàn loa Karaoke tại Vinsmart City - Hà Nội</a>
+                            <p class="line-clamp-3 text-sm text-gray-600">Hiền Lương Audio tự hào là đơn vị phân phối các sản phẩm âm thanh karaoke cao cấp như Nexo, LEA Professional, Nova Acoustic, Martin Audio, Amate Audio, Adamson, D&b Audiotechnik, DMX Audio .... Với kinh nghiệm lâu năm trên thị trường chúng tôi đã thi công nhiều dự án Karaoke trải dài trên khắp các tỉnh thành.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col xs:flex-row items-start gap-2">   
+                        <a href="#" class="w-full h-auto xs:min-w-60 xs:min-h-32 xs:h-40 p-0 md:p-2 overflow-hidden flex items-center justify-center  shadow rounded-lg bg-white transitio-all duration-700 hover:p-0">
+                            <img src="assets/imgs/du-an-1.jpg" class="h-max italic bg-no-repeat bg-cover align-middle rounded-md" style="shape-margin: 0.75rem;"  alt="" />
+                        </a>
+                        <div class="flex flex-col gap-2">
+                            <a href="#" class="text-lg font-semibold line-clamp-2 transition duration-300 hover:text-orange-500">Lắp đặt dàn loa Karaoke tại Vinsmart City - Hà Nội</a>
+                            <p class="line-clamp-3 text-sm text-gray-600">Hiền Lương Audio tự hào là đơn vị phân phối các sản phẩm âm thanh karaoke cao cấp như Nexo, LEA Professional, Nova Acoustic, Martin Audio, Amate Audio, Adamson, D&b Audiotechnik, DMX Audio .... Với kinh nghiệm lâu năm trên thị trường chúng tôi đã thi công nhiều dự án Karaoke trải dài trên khắp các tỉnh thành.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col xs:flex-row items-start gap-2">   
+                        <a href="#" class="w-full h-auto xs:min-w-60 xs:min-h-32 xs:h-40 p-0 md:p-2 overflow-hidden flex items-center justify-center  shadow rounded-lg bg-white transitio-all duration-700 hover:p-0">
+                            <img src="assets/imgs/du-an-1.jpg" class="h-max italic bg-no-repeat bg-cover align-middle rounded-md" style="shape-margin: 0.75rem;"  alt="" />
+                        </a>
+                        <div class="flex flex-col gap-2">
+                            <a href="#" class="text-lg font-semibold line-clamp-2 transition duration-300 hover:text-orange-500">Lắp đặt dàn loa Karaoke tại Vinsmart City - Hà Nội</a>
+                            <p class="line-clamp-3 text-sm text-gray-600">Hiền Lương Audio tự hào là đơn vị phân phối các sản phẩm âm thanh karaoke cao cấp như Nexo, LEA Professional, Nova Acoustic, Martin Audio, Amate Audio, Adamson, D&b Audiotechnik, DMX Audio .... Với kinh nghiệm lâu năm trên thị trường chúng tôi đã thi công nhiều dự án Karaoke trải dài trên khắp các tỉnh thành.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="px-4 md:px-8 lg:px-12 pt-20 bg-gradient-to-b from-gray-100 via-orange-150 to-orange-300">
+        <div class="relative">
+            <a href="#" class="block shadow rounded-lg overflow-hidden w-full h-full md:h-72">
+                <img src="assets/imgs/new-year.jpg" class="w-full h-max italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;"  alt="new year" />
+            </a>
+            <!-- <form action="" method="" class="absolute z-10 inset-0 flex flex-col items-center justify-center gap-2 bg-gray-950/30 rounded-lg">
+                <label for="email" class="text-white text-2xl">Đăng ký để nhận thông tin mới nhất !</label>
+                <div class="w-1/3 flex flex-row">
+                    <input type="text" name="email" id="email" placeholder="Nhập email để nhận thông thông tin ..." class="w-full placeholder:text-xs placeholder:italic">
+                    <button class="bg-orange-500 px-4 py-2 text-white flex items-center justify-center transition duration-300 hover:bg-orange-600"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </form> -->
+        </div>
+    </section>
+    <footer class="pt-20 bg-gradient-to-b from-orange-300 via-orange-600 to-orange-900">
+        <section class="px-4 md:px-8 lg:px-12 py-10 border-t-2 border-orange-600">
+            <div class="flex flex-col items-center gap-2 pb-4 text-center">
+                <a href="#" class="w-16 h-16 transition-all duration-700 hover:scale-125">
+                    <img src="assets/imgs/logo.png" class="w-max h-full italic bg-no-repeat bg-cover align-middle rounded-md" style="shape-margin: 0.75rem;"  alt="website logo" />
+                </a>
+                <h1 class="text-white text-2xl text-bold font-semibold uppercase">Cửa hàng âm thanh Hiền Lương</h1>
+            </div>
+        </section>
+        <div class="px-4 md:px-8 lg:px-12 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="">
+                <h2 class="text-white text-xl font-semibold pb-4">Thông tin cửa hàng</h2>
+                <div class="flex flex-col gap-2 text-sm">
+                    <div class="flex flex-row gap-2">
+                        <span class="text-orange-300"><i class="fa-solid fa-location-dot"></i></span>
+                        <span class="text-gray-100 font-light">Số XX, đường XX - Tp Hà Giang - Hà Giang</span>
+                    </div>
+                    <div class="flex flex-row gap-2">
+                        <span class="text-orange-300"><i class="fa-solid fa-envelope"></i></span>
+                        <a href="mailto:hienluongaudio@gmail.com" class="text-gray-100 font-light transition duration-300 hover:text-orange-300">hienluongaudio@gmail.com</a>
+                    </div>
+                    <div class="flex flex-row gap-2">
+                        <span class="text-orange-300"><i class="fa-solid fa-phone"></i></span>
+                        <a href="tel:+84999999999" class="text-gray-100 font-light transition duration-300 hover:text-orange-300">0999.999.999</a>
+                    </div>
+                </div>
+                <div class="flex flex-row gap-2 py-4">
+                    <a href="#" class="text-gray-100 w-8 h-8 text-2xl flex items-center justify-center transition-all duration-300 hover:bg-white hover:shadow hover:rounded-full hover:scale-110 hover:text-[#4267B2]"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="text-gray-100 w-8 h-8 text-2xl flex items-center justify-center transition-all duration-300 hover:bg-white hover:shadow hover:rounded-full hover:scale-110 hover:text-[#C13584]"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-gray-100 w-8 h-8 text-2xl flex items-center justify-center transition-all duration-300 hover:bg-white hover:shadow hover:rounded-full hover:scale-110 hover:text-[#FF0000]"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="">
+                <h2 class="text-white text-xl font-semibold pb-4">Chính sách</h2>
+                <div class="text-sm flex flex-col gap-2">
+                    <a href="#" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">Vận chuyển giao hàng</a>
+                    <a href="#" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">Chính sách kiểm hàng</a>
+                    <a href="#" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">Đổi trả hàng</a>
+                    <a href="#" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">Chính sách bảo hành</a>
+                    <a href="#" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">Chính sách bảo mật</a>
+                    <a href="#" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">Chính sách bảo vệ thông tin cá nhân của khách hàng</a>
+                </div>
+            </div>
+            <div class="">
+                <h2 class="text-white text-xl font-semibold pb-4">Hỗ trợ khách hàng</h2>
+                <div class="text-sm flex flex-col gap-2">
+                    <a href="#" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">Hình thức thanh toán</a>
+                    <a href="#" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">Hướng dẫn mua hàng</a>
+                    <a href="#" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">Đổi trả hàng</a>
+                    <a href="#" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">Tải phần mềm vang số</a>
+                </div>
+            </div>
+            <div class="">
+                <h2 class="text-white text-xl font-semibold pb-4">Chăm sóc khách hàng</h2>
+                <div class="text-sm flex flex-col gap-2">
+                    <div class="flex flex-row gap-2">
+                        <span class="text-gray-100 font-normal">Hotline:</span>
+                        <a href="tel:+" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">0999.999.999</a>
+                        <span class="text-gray-100 font-light">(8h - 22h)</span>
+                    </div>
+                    <div class="flex flex-row gap-2">
+                        <span class="text-gray-100 font-normal">Kinh doanh:</span>
+                        <a href="tel:+" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">0999.999.888</a>
+                        <span class="text-gray-100 font-light">(8h - 22h)</span>
+                    </div>
+                    <div class="flex flex-row gap-2">
+                        <span class="text-gray-100 font-normal">Khiếu nại - CSKH:</span>
+                        <a href="tel:+" class="text-gray-100 font-light inline-block transition duration-300 hover:text-orange-300">0999.999.666</a>
+                        <span class="text-gray-100 font-light">(8h - 22h)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="px-4 md:px-8 lg:px-12 py-10 flex flex-col justify-start gap-y-4 xs:flex-row xs:flex-wrap xs:items-center xs:justify-center">
+            <li>
+                <a href="#" class="text-gray-100 px-4 py-1 xs:border-r-2 xs:border-orange-300 transition duration-300 hover:text-orange-300">
+                    <i class="fa-solid fa-house"></i> Trang chủ
+                </a>
+            </li>
+            <li>
+                <a href="#" class="text-gray-100 px-4 py-1 xs:border-r-2 xs:border-orange-300 transition duration-300 hover:text-orange-300">
+                    <i class="fa-solid fa-headphones"></i> Sản phẩm
+                </a>
+            </li>
+            <li>
+                <a href="#" class="text-gray-100 px-4 py-1 xs:border-r-2 xs:border-orange-300 transition duration-300 hover:text-orange-300">
+                    <i class="fa-solid fa-circle-info"></i> Giới thiệu
+                </a>
+            </li>
+            <li>
+                <a href="#" class="text-gray-100 px-4 py-1 xs:border-r-2 xs:border-orange-300 transition duration-300 hover:text-orange-300">
+                    <i class="fa-solid fa-diagram-project"></i> Dự án
+                </a>
+            </li>
+            <li>
+                <a href="#" class="text-gray-100 px-4 py-1 xs:border-r-2 xs:border-orange-300 transition duration-300 hover:text-orange-300">
+                    <i class="fa-solid fa-newspaper"></i> Tin tức
+                </a>
+            </li>
+            <li>
+                <a href="#" class="text-gray-100 px-4 py-1 xs:border-r-2 xs:border-orange-300 transition duration-300 hover:text-orange-300">
+                    <i class="fa-solid fa-address-card"></i> Liên hệ
+                </a>
+            </li>
+            <li>
+                <a href="#" class="text-gray-100 px-4 py-1 transition duration-300 hover:text-orange-300">
+                    <i class="fa-solid fa-download"></i> Tải xuống phần mềm
+                </a>
+            </li>
+        </ul>
+        <div class="text-gray-200 italic font-light text-sm py-4 text-center border-t-2 border-orange-300">
+            <span>Bản quyền thuộc về Cửa hàng âm thanh Hiền Lương - 2024</span>
+        </div>
+    </footer>
+    <!-- MOBILE MENU MODAL -->
+    <div id="modal-overlay" class="fixed inset-0 bg-gray-900/50 z-50 overflow-auto box-border transition-all duration-700 invisible opacity-0">
+        <div id="modal-wrap" class="relative min-w-60 w-1/3 max-w-2/3 bg-gray-100 transition duration-700 -translate-x-full">
+            <button id="modal__btn--close" class="absolute top-0 -right-8">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-8 h-8 fill-white hover:fill-gray-300">
+                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                </svg>
+            </button>
+            <div class="bg-orange-900 p-2">
+                <a href="#" class="flex w-8 h-8 items-center gap-1 text-white font-semibold uppercase tracking-widest">
+                    <img src="assets/imgs/logo.png" alt="website logo image" class="w-max h-auto italic bg-no-repeat bg-cover align-middle" style="shape-margin: 0.75rem;">
+                    <span class="">HienLuongAudio</span>
+                </a>
+            </div>
+            <div class="text-sm border-b-2 border-orange-500">
+                <a href="#" class="p-4 text-orange-500 font-semibold flex justify-between">
+                    <span>Đăng nhập/Đăng ký</span>
+                    <span class="w-5 flex items-center justify-center"><i class="fa-solid fa-user"></i></span>
+                </a>
+            </div>
+            <div class="p-4 text-sm border-b-2 border-orange-500 flex items-center justify-between">
+                <div class="text-orange-500">
+                    <span>Xin chào, </span>
+                    <span class="font-bold">Duy</span>
+                </div>
+                <button id="user-action-btn" class="w-5 h-5 text-orange-500 border border-orange-500 rounded-full flex items-center justify-center transition-all duration-700">
+                    <i class="fa-solid fa-sort-down"></i>
+                </button>
+            </div>
+            <div id="user-menu" class="bg-gray-100 px-4 py-2 flex-col text-sm border-b-2 border-orange-400 hidden">
+                <a href="" class="flex items-center gap-2 pl-2 py-2 border-b"><i class="fa-solid fa-circle-user"></i>Tài khoản</a>
+                <a href="" class="flex items-center gap-2 pl-2 py-2 border-b"><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng</a>
+                <a href="" class="flex items-center gap-2 pl-2 py-2 border-b"><i class="fa-solid fa-heart"></i>Sản phẩm yêu thích</a>
+                <a href="" class="flex items-center gap-2 pl-2 py-2"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+            </div>
+            <div class="text-sm border-b-2 border-orange-500">
+                <a href="#" class="p-4 text-orange-500 font-semibold flex justify-between">
+                    <span>Trang chủ</span>
+                    <span class="w-5 flex items-center justify-center"><i class="fa-solid fa-house"></i></span>
+                </a>
+            </div>
+            <div class="p-4 text-sm border-b-2 border-orange-500">
+                <h5 class="font-bold text-orange-500">Sản phẩm</h5>
+                <div class="pl-2 flex flex-col gap-2">
+                    <div class="border-b flex items-center justify-between">
+                        <a href="" class="w-max pl-2 py-2 ">Loa</a>
+                        <button class="-rotate-90 w-5 h-5 flex items-center justify-center"><i class="fa-solid fa-sort-down"></i></button>
+                    </div>
+                    <div class="border-b flex items-center justify-between">
+                        <a href="" class="w-max pl-2 py-2 ">Vang Số / Mixer / DSP</a>
+                        <button class="-rotate-90 w-5 h-5 flex items-center justify-center"><i class="fa-solid fa-sort-down"></i></button>
+                    </div>
+                    <div class="border-b flex items-center justify-between">
+                        <a href="" class="w-max pl-2 py-2 ">Phụ kiện âm thanh</a>
+                        <button class="-rotate-90 w-5 h-5 flex items-center justify-center"><i class="fa-solid fa-sort-down"></i></button>
+                    </div>
+                    <div class="border-b flex items-center justify-between">
+                        <a href="" class="w-max pl-2 py-2 ">Quản lý nguồn điện</a>
+                        <button class="-rotate-90 w-5 h-5 flex items-center justify-center"><i class="fa-solid fa-sort-down"></i></button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="text-sm border-b-2 border-orange-500">
+                <a href="#" class="p-4 text-orange-500 font-semibold flex justify-between">
+                    <span>Giới thiệu</span>
+                    <span class="w-5 flex items-center justify-center"><i class="fa-solid fa-circle-info"></i></span>
+                </a>
+            </div>
+            <div class="text-sm border-b-2 border-orange-500">
+                <a href="#" class="p-4 text-orange-500 font-semibold flex justify-between">
+                    <span>Tin tức</span>
+                    <span class="w-5 flex items-center justify-center"><i class="fa-solid fa-newspaper"></i></span>
+                </a>
+            </div>
+            <div class="text-sm border-b-2 border-orange-500">
+                <a href="#" class="p-4 text-orange-500 font-semibold flex justify-between">
+                    <span>Dự án</span>
+                    <span class="w-5 flex items-center justify-center"><i class="fa-solid fa-folder-open"></i></span>
+                </a>
+            </div>
+            <div class="text-sm border-b-2 border-orange-500">
+                <a href="#" class="p-4 text-orange-500 font-semibold flex justify-between">
+                    <span>Liên hệ</span>
+                    <span class="w-5 flex items-center justify-center"><i class="fa-solid fa-address-card"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+
+        // button prev brand
+        $('#brand-btn-prev').on("click", function(e) {
+            e.preventDefault();
+            $('#list-brand').animate({
+                scrollLeft: "-=192px"
+            }, "slow");
+        });
+        // button next brand
+        $('#brand-btn-next').on("click", function(e) {
+            e.preventDefault();
+            $('#list-brand').animate({
+                scrollLeft: "+=192px"
+            }, "slow");
+        });
+        // toggle form seach
+        $('#form-search-btn').on("click", function(e) {
+            e.preventDefault();
+            $('#form-search').toggle(700);
+        });
+    
+        $("#mobile-menu-button").on("click", function() {
+            $('#modal-overlay').removeClass('invisible opacity-0');
+            $('#modal-overlay').addClass('visible opacity-100');
+            $('#modal-wrap').removeClass('-translate-x-full');
+            $('#modal-wrap').addClass('translate-x-0');
+        });
+    
+        $('#modal__btn--close').on("click", function() {
+            $('#modal-overlay').addClass('invisible opacity-0');
+            $('#modal-overlay').removeClass('visible opacity-100');
+            $('#modal-wrap').removeClass('translate-x-0');
+            $('#modal-wrap').addClass('-translate-x-full');
+            
+        })
+    
+        $(document).on("click", function (e) {
+            if ($("#modal-overlay").hasClass('visible opacity-100')) {
+            // If there is an open window
+    
+                if (
+                    !$(e.target).closest("#modal-wrap").length &&
+                    !$(e.target).closest("#mobile-menu-button").length
+                ) {
+                
+                // If clicked outside its content and not on the call link
+    
+                    $('#modal-overlay').addClass('invisible opacity-0');
+                    $('#modal-overlay').removeClass('visible opacity-100');
+                    $('#modal-wrap').removeClass('translate-x-0');
+                    $('#modal-wrap').addClass('-translate-x-full');
+                }
+            }
+        });
+
+        $('#user-action-btn').on("click", function(e) {
+            e.preventDefault();
+            $('#user-menu').toggle(700);
+            $(this).toggleClass('-rotate-180','rotate-0')
+        });
+        $('#category-btn').on("click", function(e) {
+            e.preventDefault();
+            $('#category-menu').toggle(700);
+            $(this).toggleClass('-rotate-180','rotate-0')
+        });
+
+    });
+    </script>
 </body>
 </html>

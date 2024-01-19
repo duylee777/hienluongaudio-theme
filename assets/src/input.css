@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: 'Lexend', sans-serif;
+    }
+  }
+
+
+  @layer utilities {
+    /* Chrome, Safari and Opera */
+    /* width */
+  ::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 0.5rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 0.5rem;
+    background: #FDBA75; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background: #f97316; 
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #EA580C; 
+  }
+
+  .visible-scrollbar::-webkit-scrollbar-track {
+    background: #FDBA75; 
+  }
+  .visible-scrollbar::-webkit-scrollbar-thumb {
+    background: #f97316; 
+  }
+  .hidden-scrollbar::-webkit-scrollbar-track {
+    background: #F3F4F6; 
+  }
+  .hidden-scrollbar::-webkit-scrollbar-thumb {
+    background: #F3F4F6; 
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

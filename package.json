@@ -1,0 +1,23 @@
+{
+  "name": "hienluongaudio-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i ./assets/src/input.css -o ./assets/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duylee777/hienluongaudio-theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duylee777/hienluongaudio-theme/issues"
+  },
+  "homepage": "https://github.com/duylee777/hienluongaudio-theme#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
